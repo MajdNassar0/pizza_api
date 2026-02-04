@@ -1,5 +1,5 @@
 const getpizza=async()=>{
-    const response = await fetch("https://forkify-api.jonas.io/api/v2/recipes?search=pizza");
+    const response = await fetch(`https://forkify-api.jonas.io/api/v2/recipes?search=pizza`);
     const data=await response.json();
     const recipes =data.data.recipes;
     console.log(recipes);
@@ -11,7 +11,7 @@ const getpizza=async()=>{
   <img src=${recipes.image_url} class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">${recipes.title}</h5>
-    <a href="#" class="btn btn-secondary">More Detail</a>
+    <a href="./details.html?id=${recipes.id}" class="btn btn-secondary">More Detail</a>
   </div>
 </div>
 </div>
