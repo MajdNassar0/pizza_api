@@ -1,7 +1,7 @@
 const getDetail=async()=>{
     const parm=new URLSearchParams(window.location.search);
     const id=parm.get("id");
-    const response=await fetch("https://forkify-api.jonas.io/api/v2/recipes/5ed6604591c37cdc054bc886?id=${id}");
+    const response=await fetch(`https://forkify-api.jonas.io/api/v2/recipes/${id}`);
     const data=await response.json();
     const recipe=data.data.recipe;
     console.log(recipe);
